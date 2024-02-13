@@ -39,8 +39,11 @@ sumt=0.
 do n=1,nmax
 t=n*dt
 
-Po1=(1.+A*exp(-(X1-Xa1)/delta))**(-1.)
-Po2=(1.+A*exp(-(X2-Xa2)/delta))**(-1.)
+!Po1=(1.+A*exp(-(X1-Xa1)/delta))**(-1.)
+!Po2=(1.+A*exp(-(X2-Xa2)/delta))**(-1.)
+
+Po1=1.
+Po2=1.
 
 fHB1=-lambda*V1-kgs*(X1-Xa1-D*Po1)-ksp*X1
 fHB2=-lambda*V2-kgs*(X2-Xa2-D*Po2)-ksp*X2
@@ -64,7 +67,7 @@ Xa2=Xa2+Xa2dot*dt
 sumt=sumt+(X1-X2)
 !write(1,*) t,(1./2.)*m*V1**2+(1./2.)*ksp*X1**2
 !write(2,*) t,(1./2.)*m*V2**2+(1./2.)*ksp*X2**2
-write(1,*)X2,X1
+write(1,*) X2,X1
 write(2,*) t,X2
 enddo
 !tmax=nmax*dt
