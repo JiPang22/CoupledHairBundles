@@ -58,8 +58,9 @@ Xa2=Xa2+Xa2dot*dt
 sumt=sumt+(X1-X2)
 !write(1,*) t,(1./2.)*m*V1**2+(1./2.)*ksp*X1**2
 !write(2,*) t,(1./2.)*m*V2**2+(1./2.)*ksp*X2**2
-write(1,*) t,X1
-write(2,*) t,X2
+write(1,*) X1,X2
+!write(1,*) t,X1
+!write(2,*) t,X2
 enddo
 
 !Emedia=(1./2.)*k*(((1./(dt*nmax))*sumt)**2)
